@@ -22,4 +22,4 @@ mkdir -p $VULKAN_SDK_MAC_VERSION/macOS/lib/
 
 cp $VULKAN_SDK_MAC_VERSION-full/macOS/lib/libVkLayer_khronos_validation.dylib $VULKAN_SDK_MAC_VERSION/macOS/lib/libVkLayer_khronos_validation.dylib 
 
-mv "$VULKAN_SDK_MAC_VERSION" $VULKAN_SDK_MINIMAL_DIRNAME"
+mv "$VULKAN_SDK_MAC_VERSION" "$VULKAN_SDK_MINIMAL_DIRNAME"
