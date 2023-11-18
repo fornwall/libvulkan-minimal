@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+
+env:
+  VULKAN_SDK_VERSION: 1.3.268.0
+
+jobs:
+  create-minimal-linux-x84_64:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout project
+      uses: actions/checkout@v4
+    - name: Create minimal tarball
+      run: bash -x create-linux.sh
+    - name: Upload tarball
+      uses: actions/upload-artifact@v3
+      with:
+        name: vulkansdk-linux-minimal-x86_64-${VULKAN_SDK_VERSION}
+        path: vulkansdk-linux-minimal*/
