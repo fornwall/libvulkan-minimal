@@ -20,7 +20,7 @@ mv $VULKAN_SDK_MAC_VERSION $VULKAN_SDK_MAC_VERSION-full
 
 mkdir -p $VULKAN_SDK_MAC_VERSION/macOS/{lib/,include/}
 lipo $VULKAN_SDK_MAC_VERSION-full/MoltenVK/MoltenVK.xcframework/macos-arm64_x86_64/libMoltenVK.a -thin arm64 -output $VULKAN_SDK_MAC_VERSION/macOS/lib/libMoltenVK.a
-lipo "$VULKAN_SDK_MAC_VERSION"-full/MoltenVK/dylib/macOS/libMoltenVK.dylib "$VULKAN_SDK_MAC_VERSION"/macOS/lib/libMoltenVK.dylib
+lipo "$VULKAN_SDK_MAC_VERSION"-full/MoltenVK/dylib/macOS/libMoltenVK.dylib -thin arm64 -output  "$VULKAN_SDK_MAC_VERSION"/macOS/lib/libMoltenVK.dylib
 cp "$VULKAN_SDK_MAC_VERSION"-full/macOS/lib/{libvulkan*,libVkLayer_khronos_validation.dylib} "$VULKAN_SDK_MAC_VERSION"/macOS/lib/
 cp -Rf $VULKAN_SDK_MAC_VERSION-full/macOS/include/* $VULKAN_SDK_MAC_VERSION/macOS/include/
 
