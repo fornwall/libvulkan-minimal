@@ -3,7 +3,7 @@ set -e -u
 
 VULKAN_SDK_MAC_VERSION=1.3.268.1
 VULKAN_SDK_DMGNAME=vulkansdk-macos-${VULKAN_SDK_MAC_VERSION}.dmg
-VULKAN_SDK_MINIMAL_DIRNAME=vulkansdk-macos-minimal-x86_64-${VULKAN_SDK_MAC_VERSION}
+VULKAN_SDK_MINIMAL_TARNAME=vulkansdk-macos-minimal-${VULKAN_SDK_MAC_VERSION}.tar.xz
 VULKAN_SDK_URL=https://sdk.lunarg.com/sdk/download/${VULKAN_SDK_MAC_VERSION}/mac/$VULKAN_SDK_DMGNAME
 
 curl -L -O $VULKAN_SDK_URL
@@ -22,4 +22,4 @@ mkdir -p $VULKAN_SDK_MAC_VERSION/macOS/lib/
 
 cp $VULKAN_SDK_MAC_VERSION-full/macOS/lib/libVkLayer_khronos_validation.dylib $VULKAN_SDK_MAC_VERSION/macOS/lib/libVkLayer_khronos_validation.dylib 
 
-mv "$VULKAN_SDK_MAC_VERSION" "$VULKAN_SDK_MINIMAL_DIRNAME"
+tar cf $VULKAN_SDK_MINIMAL_TARNAME $VULKAN_SDK_MAC_VERSION
