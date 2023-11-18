@@ -18,8 +18,9 @@ mv InstallVulkan.app InstallVulkan
 
 mv $VULKAN_SDK_MAC_VERSION $VULKAN_SDK_MAC_VERSION-full
 
-mkdir -p $VULKAN_SDK_MAC_VERSION/macOS/lib/
-
+mkdir -p $VULKAN_SDK_MAC_VERSION/macOS/{lib/,include/vulkan/}
+lipo $VULKAN_SDK_MAC_VERSION-full/MoltenVK/MoltenVK.xcframework/macos-arm64_x86_64/libMoltenVK.a -thin arm64 -output $VULKAN_SDK_MAC_VERSION/macOS/lib/libMoltenVK.a
+cp -Rf $VULKAN_SDK_MAC_VERSION-full/macOS/include/vulkan/* $VULKAN_SDK_MAC_VERSION/macOS/include/vulkan/
 cp $VULKAN_SDK_MAC_VERSION-full/macOS/lib/libVkLayer_khronos_validation.dylib $VULKAN_SDK_MAC_VERSION/macOS/lib/libVkLayer_khronos_validation.dylib 
 
 tar cf $VULKAN_SDK_MINIMAL_TARNAME $VULKAN_SDK_MAC_VERSION

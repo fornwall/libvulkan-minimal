@@ -13,9 +13,7 @@ tar xf "$VULKAN_SDK_TARNAME"
 mv "$VULKAN_SDK_LINUX_VERSION" "$VULKAN_SDK_LINUX_VERSION"-full
 
 mkdir -p "$VULKAN_SDK_LINUX_VERSION"/x86_64/{include/vulkan,lib}
-
 cp -Rf "$VULKAN_SDK_LINUX_VERSION"-full/x86_64/include/vulkan/* "$VULKAN_SDK_LINUX_VERSION"/x86_64/include/vulkan/
-
 cp "$VULKAN_SDK_LINUX_VERSION"-full/x86_64/lib/{libvulkan*,libVkLayer_khronos_validation.so} "$VULKAN_SDK_LINUX_VERSION"/x86_64/lib/
 
 # Shrink from around 600 MB to 40:
