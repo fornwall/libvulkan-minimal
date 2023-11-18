@@ -20,7 +20,7 @@ jobs:
     - name: Upload tarball
       uses: actions/upload-artifact@v3
       with:
-        name: vulkansdk-linux-minimal-x86_64-${VULKAN_SDK_VERSION}
+        name: vulkansdk-linux-minimal-x86_64-${{ env.VULKAN_SDK_LINUX_VERSION }}
         path: vulkansdk-linux-minimal*/
 
   create-minimal-macos:
@@ -34,8 +34,8 @@ jobs:
       run: brew install 7-zip
     - name: Create minimal SDK directory
       run: bash -x create-mac.sh
-    - name: Upload tarball
+    - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: vulkansdk-macos-minimal-${VULKAN_SDK_VERSION}
+        name: vulkansdk-macos-minimal-${{ VULKAN_SDK_MAC_VERSION }}
         path: vulkansdk-macos-minimal*/
