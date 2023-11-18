@@ -21,7 +21,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: linux-sdk
-        path: vulkansdk-linux-minimal*/
+        path: vulkansdk-linux-minimal*
 
   create-minimal-macos:
     runs-on: macos-latest
