@@ -19,12 +19,12 @@ mv InstallVulkan.app InstallVulkan
 
 mv $VULKAN_SDK_MAC_VERSION $VULKAN_SDK_MAC_VERSION-full
 
-mkdir -p $VULKAN_SDK_MINIMAL_DIRECTORY/macOS/{lib/,include/,share/vulkan/explicit_layer.d,share/vulkan/icd.d}
-lipo $VULKAN_SDK_MAC_VERSION-full/MoltenVK/MoltenVK.xcframework/macos-arm64_x86_64/libMoltenVK.a -thin arm64 -output $VULKAN_SDK_MINIMAL_DIRECTORY/macOS/lib/libMoltenVK.a
-lipo "$VULKAN_SDK_MAC_VERSION"-full/MoltenVK/dylib/macOS/libMoltenVK.dylib -thin arm64 -output  "$VULKAN_SDK_MINIMAL_DIRECTORY"/macOS/lib/libMoltenVK.dylib
-cp "$VULKAN_SDK_MAC_VERSION"-full/macOS/lib/{libvulkan*,libVkLayer*.dylib} "$VULKAN_SDK_MINIMAL_DIRECTORY"/macOS/lib/
-cp -Rf $VULKAN_SDK_MAC_VERSION-full/macOS/include/* $VULKAN_SDK_MINIMAL_DIRECTORY/macOS/include/
-cp -Rf $VULKAN_SDK_MAC_VERSION-full/macOS/share/vulkan/explicit_layer.d/* $VULKAN_SDK_MINIMAL_DIRECTORY/macOS/share/vulkan/explicit_layer.d/
-cp -Rf $VULKAN_SDK_MAC_VERSION-full/macOS/share/vulkan/icd.d/* $VULKAN_SDK_MINIMAL_DIRECTORY/macOS/share/vulkan/icd.d/
+mkdir -p $VULKAN_SDK_MINIMAL_DIRECTORY/{lib/,include/,share/vulkan/explicit_layer.d,share/vulkan/icd.d}
+lipo $VULKAN_SDK_MAC_VERSION-full/MoltenVK/MoltenVK.xcframework/macos-arm64_x86_64/libMoltenVK.a -thin arm64 -output $VULKAN_SDK_MINIMAL_DIRECTORY/lib/libMoltenVK.a
+lipo "$VULKAN_SDK_MAC_VERSION"-full/MoltenVK/dylib/macOS/libMoltenVK.dylib -thin arm64 -output  "$VULKAN_SDK_MINIMAL_DIRECTORY"/lib/libMoltenVK.dylib
+cp "$VULKAN_SDK_MAC_VERSION"-full/macOS/lib/{libvulkan*,libVkLayer*.dylib} "$VULKAN_SDK_MINIMAL_DIRECTORY"/lib/
+cp -Rf $VULKAN_SDK_MAC_VERSION-full/macOS/include/* $VULKAN_SDK_MINIMAL_DIRECTORY/include/
+cp -Rf $VULKAN_SDK_MAC_VERSION-full/macOS/share/vulkan/explicit_layer.d/* $VULKAN_SDK_MINIMAL_DIRECTORY/share/vulkan/explicit_layer.d/
+cp -Rf $VULKAN_SDK_MAC_VERSION-full/macOS/share/vulkan/icd.d/* $VULKAN_SDK_MINIMAL_DIRECTORY/share/vulkan/icd.d/
 
 tar cf $VULKAN_SDK_MINIMAL_TARNAME $VULKAN_SDK_MINIMAL_DIRECTORY
