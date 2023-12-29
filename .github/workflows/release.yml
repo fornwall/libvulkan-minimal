@@ -58,5 +58,5 @@ jobs:
       - uses: softprops/action-gh-release@v1
         with:
           files: |
-            vulkansdk-linux-minimal-x86_64-${{ env.VULKAN_SDK_LINUX_VERSION }}.tar.xz
-            vulkansdk-macos-minimal-${{ env.VULKAN_SDK_MAC_VERSION }}.tar.xz
+            vulkansdk-linux-minimal-x86_64.tar.xz
+            vulkansdk-macos-minimal.tar.xz

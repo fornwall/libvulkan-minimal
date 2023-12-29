@@ -3,7 +3,7 @@ set -e -u
 
 VULKAN_SDK_MAC_VERSION=1.3.268.1
 VULKAN_SDK_DMGNAME=vulkansdk-macos-${VULKAN_SDK_MAC_VERSION}.dmg
-VULKAN_SDK_MINIMAL_TARNAME=vulkansdk-macos-minimal-${VULKAN_SDK_MAC_VERSION}.tar.xz
+VULKAN_SDK_MINIMAL_TARNAME=vulkansdk-macos-minimal.tar.xz
 VULKAN_SDK_URL=https://sdk.lunarg.com/sdk/download/${VULKAN_SDK_MAC_VERSION}/mac/$VULKAN_SDK_DMGNAME
 
 curl -L -O $VULKAN_SDK_URL

@@ -3,7 +3,7 @@ set -e -u
 
 # VULKAN_SDK_LINUX_VERSION=1.3.268.0
 VULKAN_SDK_TARNAME=vulkansdk-linux-x86_64-${VULKAN_SDK_LINUX_VERSION}.tar.xz
-VULKAN_SDK_MINIMAL_TARNAME=vulkansdk-linux-minimal-x86_64-${VULKAN_SDK_LINUX_VERSION}.tar.xz
+VULKAN_SDK_MINIMAL_TARNAME=vulkansdk-linux-minimal-x86_64.tar.xz
 VULKAN_SDK_URL=https://sdk.lunarg.com/sdk/download/${VULKAN_SDK_LINUX_VERSION}/linux/$VULKAN_SDK_TARNAME
 
 curl -O "$VULKAN_SDK_URL"
