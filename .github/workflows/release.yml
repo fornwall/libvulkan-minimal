@@ -8,10 +8,6 @@ on:
 permissions:
   contents: write    
 
-env:
-  VULKAN_SDK_LINUX_VERSION: 1.3.275.0
-  VULKAN_SDK_MAC_VERSION: 1.3.275.0
-
 jobs:
   create-minimal-linux-x84_64:
     runs-on: ubuntu-latest
