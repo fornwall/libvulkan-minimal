@@ -17,7 +17,7 @@ jobs:
     - name: Create minimal SDK directory
       run: bash -x create-linux.sh
     - name: Upload tarball
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: linux-sdk
         path: vulkansdk-linux-minimal*
@@ -34,7 +34,7 @@ jobs:
     - name: Create minimal SDK directory
       run: bash -x create-mac.sh
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: macos-sdk
         path: vulkansdk-macos-minimal*
