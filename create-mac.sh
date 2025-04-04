@@ -2,14 +2,14 @@
 set -e -u
 
 . sdk-version.sh
-VULKAN_SDK_DMGNAME=vulkansdk-macos-${VULKAN_SDK_VERSION}.dmg
+VULKAN_SDK_ZIPNAME=vulkansdk-macos-${VULKAN_SDK_VERSION}.zip
 VULKAN_SDK_MINIMAL_DIRECTORY=vulkansdk-macos-minimal
 VULKAN_SDK_MINIMAL_TARNAME=${VULKAN_SDK_MINIMAL_DIRECTORY}.tar.xz
-VULKAN_SDK_URL=https://sdk.lunarg.com/sdk/download/${VULKAN_SDK_VERSION}/mac/$VULKAN_SDK_DMGNAME
+VULKAN_SDK_URL=https://sdk.lunarg.com/sdk/download/${VULKAN_SDK_VERSION}/mac/$VULKAN_SDK_ZIPNAME
 
 curl -L -O $VULKAN_SDK_URL
 
-7zz x $VULKAN_SDK_DMGNAME
+unzip $VULKAN_SDK_ZIPNAME
 
 # See https://vulkan.lunarg.com/doc/sdk/latest/mac/getting_started.html
 # Remove .app suffix to not get error about damaged file:
