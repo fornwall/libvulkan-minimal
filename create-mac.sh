@@ -15,7 +15,7 @@ unzip $VULKAN_SDK_ZIPNAME
 # Remove .app suffix to not get error about damaged file:
 mv InstallVulkan-${VULKAN_SDK_VERSION}.app InstallVulkan
 
-./InstallVulkan/Contents/MacOS/InstallVulkan --root $PWD/$VULKAN_SDK_VERSION --accept-licenses --default-answer --confirm-command install com.lunarg.vulkan.core
+./InstallVulkan/Contents/MacOS/InstallVulkan-${VULKAN_SDK_VERSION} --root $PWD/$VULKAN_SDK_VERSION --accept-licenses --default-answer --confirm-command install com.lunarg.vulkan.core
 
 mv $VULKAN_SDK_VERSION $VULKAN_SDK_VERSION-full
 
